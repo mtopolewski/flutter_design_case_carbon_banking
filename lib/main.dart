@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_design_case_carbon_banking/styles/colors.dart';
+import 'package:flutter_design_case_carbon_banking/styles/app_colors.dart';
 import 'package:flutter_design_case_carbon_banking/widgets/cutout_container.dart';
 
 void main() {
@@ -27,6 +27,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColors.appWhite,
       appBar: AppBar(
+        titleSpacing: 36,
         backgroundColor: AppColors.appBlack,
         elevation: 0,
         centerTitle: false,
@@ -65,7 +66,6 @@ class HomePage extends StatelessWidget {
                       height: 8,
                       alignment: Alignment.center,
                       child: Container(
-                        //color: AppColors.appRed,
                         decoration: const BoxDecoration(
                           color: AppColors.appRed,
                           borderRadius: BorderRadius.all(Radius.circular(3)),
@@ -79,6 +79,9 @@ class HomePage extends StatelessWidget {
               ),
             ),
           ),
+          const SizedBox(
+            width: 28,
+          )
         ],
       ),
       body: Column(children: [
@@ -87,69 +90,74 @@ class HomePage extends StatelessWidget {
           child: Stack(
             children: [
               const CutoutContainer(),
-              Column(
-                children: [
-                  SizedBox(
-                    width: 160,
-                    child: DefaultTabController(
-                        length: 2,
-                        child: TabBar(
-                          //indicatorWeight: 0,
-                          padding: EdgeInsets.zero,
-                          labelPadding: EdgeInsets.zero,
-                          //indicator: null,
-                          indicatorColor: Colors.transparent,
-                          tabs: [
-                            Text("Account".toUpperCase()),
-                            Text("Ballance".toUpperCase())
-                          ],
-                        )),
-                  ),
-                  Row(
-                    children: [
-                      const Text(
-                        "\$ 18,354.00",
-                        style: TextStyle(color: Colors.white, fontSize: 30),
-                      ),
-                      OutlinedButton(
-                        onPressed: () {},
-                        style: ButtonStyle(
-                          shape:
-                              MaterialStateProperty.all(RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(12.0),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 36),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Spacer(),
+                    SizedBox(
+                      width: 160,
+                      child: DefaultTabController(
+                          length: 2,
+                          child: TabBar(
+                            //indicatorWeight: 0,
+                            padding: EdgeInsets.zero,
+                            labelPadding: EdgeInsets.zero,
+                            //indicator: null,
+                            indicatorColor: Colors.transparent,
+                            tabs: [
+                              Text("Account".toUpperCase()),
+                              Text("Ballance".toUpperCase())
+                            ],
                           )),
-                          //side: MaterialStateProperty(BorderSide(width: 5.0, color: Colors.blue)),
-                          side: MaterialStateProperty.all(
-                            const BorderSide(
-                                width: 1.0, color: AppColors.appGrey),
-                          ),
-                          padding: MaterialStateProperty.all(EdgeInsets.zero),
-                          maximumSize: MaterialStateProperty.all(
-                            const Size(60, 60),
-                          ),
-                          minimumSize: MaterialStateProperty.all(
-                            const Size(42, 42),
-                          ),
-                          foregroundColor:
-                              MaterialStateProperty.all(Colors.white),
+                    ),
+                    const SizedBox(
+                      height: 14,
+                    ),
+                    Row(
+                      children: [
+                        const Text(
+                          "\$ 18,354.00",
+                          style: TextStyle(color: Colors.white, fontSize: 30),
                         ),
-                        child: const Icon(
-                          Icons.show_chart,
-                          size: 16,
+                        const Spacer(),
+                        OutlinedButton(
+                          onPressed: () {},
+                          style: ButtonStyle(
+                            shape: MaterialStateProperty.all(
+                              RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(12.0),
+                              ),
+                            ),
+                            //side: MaterialStateProperty(BorderSide(width: 5.0, color: Colors.blue)),
+                            side: MaterialStateProperty.all(
+                              const BorderSide(
+                                  width: 1.0, color: AppColors.appGrey),
+                            ),
+                            padding: MaterialStateProperty.all(EdgeInsets.zero),
+                            maximumSize: MaterialStateProperty.all(
+                              const Size(60, 60),
+                            ),
+                            minimumSize: MaterialStateProperty.all(
+                              const Size(42, 42),
+                            ),
+                            foregroundColor:
+                                MaterialStateProperty.all(Colors.white),
+                          ),
+                          child: const Icon(
+                            Icons.show_chart,
+                            size: 16,
+                          ),
                         ),
-                      )
-                      // OutlinedButton.icon(
-                      //   onPressed: () {},
-                      //   icon: const Icon(Icons.show_chart),
-                      //   label: const Text(""),
-                      // ),
-                    ],
-                  ),
-                  const Spacer(),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 40),
-                    child: Card(
+                      ],
+                    ),
+                    const Spacer(),
+                    Card(
                       elevation: 16,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(16.0),
+                      ),
                       color: AppColors.appRed,
                       child: SizedBox(
                         height: 86,
@@ -159,22 +167,52 @@ class HomePage extends StatelessWidget {
                               child: Column(
                                 mainAxisSize: MainAxisSize.min,
                                 children: const [
-                                  Text("\$ 4280"),
-                                  Text("AVG Spendings")
+                                  Text(
+                                    "\$ 4280",
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 20,
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 6,
+                                  ),
+                                  Text(
+                                    "AVG Spendings",
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.w200),
+                                  )
                                 ],
                               ),
                             ),
                             Container(
-                              width: 0.5,
-                              height: 50,
+                              width: 0.3,
+                              height: 40,
                               color: Colors.white,
                             ),
                             Expanded(
                               child: Column(
                                 mainAxisSize: MainAxisSize.min,
                                 children: const [
-                                  Text("+3.4%"),
-                                  Text("AVG Shift")
+                                  Text(
+                                    "+3.4%",
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 20,
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 6,
+                                  ),
+                                  Text(
+                                    "AVG Shift",
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.w200),
+                                  )
                                 ],
                               ),
                             )
@@ -182,12 +220,12 @@ class HomePage extends StatelessWidget {
                         ),
                       ),
                     ),
-                  ),
-                  const SizedBox(
-                    height: 28,
-                  )
-                  //const Spacer(),
-                ],
+                    const SizedBox(
+                      height: 32,
+                    )
+                    //const Spacer(),
+                  ],
+                ),
               ),
             ],
           ),
@@ -196,6 +234,147 @@ class HomePage extends StatelessWidget {
           flex: 3,
           child: Container(
             color: AppColors.appWhite,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Padding(
+                  padding: EdgeInsets.only(left: 36),
+                  child: Text(
+                    "Send Money",
+                    style: TextStyle(fontSize: 18),
+                  ),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                ConstrainedBox(
+                  constraints:
+                      const BoxConstraints(minHeight: 20, maxHeight: 80),
+                  child: ListView(
+                    //shrinkWrap: true,
+                    scrollDirection: Axis.horizontal,
+                    children: [
+                      Container(
+                        padding: const EdgeInsets.only(left: 36, right: 8),
+                        alignment: Alignment.center,
+                        child: OutlinedButton(
+                          onPressed: () {},
+                          style: ButtonStyle(
+                            shape: MaterialStateProperty.all(
+                              RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(30.0),
+                              ),
+                            ),
+                            backgroundColor:
+                                MaterialStateProperty.all(AppColors.appBlack),
+                            side: MaterialStateProperty.all(
+                              const BorderSide(
+                                  width: 1.0, color: AppColors.appGrey),
+                            ),
+                            padding: MaterialStateProperty.all(EdgeInsets.zero),
+                            maximumSize: MaterialStateProperty.all(
+                              const Size(70, 70),
+                            ),
+                            minimumSize: MaterialStateProperty.all(
+                              const Size(60, 60),
+                            ),
+                            foregroundColor:
+                                MaterialStateProperty.all(Colors.white),
+                          ),
+                          child: const Icon(
+                            Icons.search_outlined,
+                            size: 26,
+                          ),
+                        ),
+                      ),
+                      const Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 8),
+                        child: CircleAvatar(
+                          radius: 27,
+                          backgroundImage: NetworkImage(
+                            "https://bandlabimages.azureedge.net/v1.0/users/0e5680f9-d61a-4bc5-a52d-be67403497b0/640x640",
+                            //height: 150.0,
+                            //width: 100.0,
+                          ),
+                        ),
+                      ),
+                      const Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 8),
+                        child: CircleAvatar(
+                          radius: 27,
+                          backgroundImage: NetworkImage(
+                            "https://bandlabimages.azureedge.net/v1.0/users/0e5680f9-d61a-4bc5-a52d-be67403497b0/640x640",
+                            //height: 150.0,
+                            //width: 100.0,
+                          ),
+                        ),
+                      ),
+                      const Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 8),
+                        child: CircleAvatar(
+                          radius: 27,
+                          backgroundImage: NetworkImage(
+                            "https://bandlabimages.azureedge.net/v1.0/users/0e5680f9-d61a-4bc5-a52d-be67403497b0/640x640",
+                            //height: 150.0,
+                            //width: 100.0,
+                          ),
+                        ),
+                      ),
+                      const Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 8),
+                        child: CircleAvatar(
+                          radius: 27,
+                          backgroundImage: NetworkImage(
+                            "https://bandlabimages.azureedge.net/v1.0/users/0e5680f9-d61a-4bc5-a52d-be67403497b0/640x640",
+                            //height: 150.0,
+                            //width: 100.0,
+                          ),
+                        ),
+                      ),
+                      const Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 8),
+                        child: CircleAvatar(
+                          radius: 27,
+                          backgroundImage: NetworkImage(
+                            "https://bandlabimages.azureedge.net/v1.0/users/0e5680f9-d61a-4bc5-a52d-be67403497b0/640x640",
+                            //height: 150.0,
+                            //width: 100.0,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 36, top: 30, right: 36),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const Text(
+                        "Quick Payments",
+                        style: TextStyle(fontSize: 18),
+                      ),
+                      TextButton(
+                        onPressed: () {},
+                        style: ButtonStyle(
+                            padding: MaterialStateProperty.all(EdgeInsets.zero),
+                            maximumSize: MaterialStateProperty.all(
+                              const Size(40, 40),
+                            ),
+                            minimumSize: MaterialStateProperty.all(
+                              const Size(38, 38),
+                            ),
+                            foregroundColor:
+                                MaterialStateProperty.all(AppColors.appBlack)),
+                        child: const Icon(
+                          Icons.more_horiz,
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ]),

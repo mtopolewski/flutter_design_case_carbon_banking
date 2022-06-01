@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_design_case_carbon_banking/styles/colors.dart';
+import 'package:flutter_design_case_carbon_banking/styles/app_colors.dart';
 
 class CutoutContainer extends StatelessWidget {
   const CutoutContainer({Key? key, this.child}) : super(key: key);
