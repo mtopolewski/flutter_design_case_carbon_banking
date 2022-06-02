@@ -305,7 +305,7 @@ class HomePage extends StatelessWidget {
                             child: CircleAvatar(
                               radius: 27,
                               backgroundImage: NetworkImage(
-                                "https://bandlabimages.azureedge.net/v1.0/users/0e5680f9-d61a-4bc5-a52d-be67403497b0/640x640",
+                                "https://image.shutterstock.com/image-photo/stock-photo-profile-picture-of-smiling-millennial-asian-girl-isolated-on-grey-wall-background-look-at-camera-250nw-1836020740.jpg",
                                 //height: 150.0,
                                 //width: 100.0,
                               ),
@@ -316,7 +316,7 @@ class HomePage extends StatelessWidget {
                             child: CircleAvatar(
                               radius: 27,
                               backgroundImage: NetworkImage(
-                                "https://bandlabimages.azureedge.net/v1.0/users/0e5680f9-d61a-4bc5-a52d-be67403497b0/640x640",
+                                "https://image.shutterstock.com/image-photo/stock-photo-headshot-portrait-of-smiling-millennial-male-employee-talk-on-video-call-or-web-conference-in-250nw-1667439913.jpg",
                                 //height: 150.0,
                                 //width: 100.0,
                               ),
@@ -327,7 +327,7 @@ class HomePage extends StatelessWidget {
                             child: CircleAvatar(
                               radius: 27,
                               backgroundImage: NetworkImage(
-                                "https://bandlabimages.azureedge.net/v1.0/users/0e5680f9-d61a-4bc5-a52d-be67403497b0/640x640",
+                                "https://image.shutterstock.com/image-photo/stock-photo-young-adult-profile-picture-with-red-hair-250nw-1655747050.jpg",
                                 //height: 150.0,
                                 //width: 100.0,
                               ),
@@ -338,7 +338,18 @@ class HomePage extends StatelessWidget {
                             child: CircleAvatar(
                               radius: 27,
                               backgroundImage: NetworkImage(
-                                "https://bandlabimages.azureedge.net/v1.0/users/0e5680f9-d61a-4bc5-a52d-be67403497b0/640x640",
+                                "https://image.shutterstock.com/image-photo/stock-photo-close-up-headshot-portrait-picture-of-smiling-african-american-businesswoman-happy-attractive-250nw-1733598437.jpg",
+                                //height: 150.0,
+                                //width: 100.0,
+                              ),
+                            ),
+                          ),
+                          const Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 8),
+                            child: CircleAvatar(
+                              radius: 27,
+                              backgroundImage: NetworkImage(
+                                "https://image.shutterstock.com/image-photo/stock-photo-portrait-of-smiling-red-haired-millennial-man-looking-at-camera-sitting-in-caf-or-coffeeshop-250nw-1194497251.jpg",
                                 //height: 150.0,
                                 //width: 100.0,
                               ),
@@ -458,44 +469,95 @@ class HomePage extends StatelessWidget {
           ),
         ],
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.transparent,
-        fixedColor: Colors.transparent,
-        elevation: 0,
-        showSelectedLabels: false,
-        showUnselectedLabels: false,
-        items: const [
-          BottomNavigationBarItem(
-            backgroundColor: Colors.transparent,
-            icon: Icon(
-              Icons.home_outlined,
-              color: AppColors.appBlack,
+      bottomNavigationBar: BottomAppBar(
+          color: Colors.transparent,
+          elevation: 0,
+          child: SizedBox(
+            height: 80,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                TextButton(
+                  onPressed: () {},
+                  child: const Icon(
+                    Icons.home_outlined,
+                    color: AppColors.appBlack,
+                  ),
+                ),
+                TextButton(
+                  onPressed: () {},
+                  child: const Icon(
+                    Icons.dns_outlined,
+                    color: AppColors.appBlack,
+                  ),
+                ),
+                TextButton(
+                  onPressed: () {},
+                  child: const Icon(
+                    Icons.account_balance_wallet_outlined,
+                    color: AppColors.appBlack,
+                  ),
+                ),
+                TextButton(
+                  onPressed: () {},
+                  child: const Icon(
+                    Icons.cached_outlined,
+                    color: AppColors.appBlack,
+                  ),
+                ),
+              ],
             ),
-            label: "",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.dns_outlined,
-              color: AppColors.appBlack,
-            ),
-            label: "",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.account_balance_wallet_outlined,
-              color: AppColors.appBlack,
-            ),
-            label: "",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.cached_outlined,
-              color: AppColors.appBlack,
-            ),
-            label: "",
-          ),
-        ],
-      ),
+          )),
+      // bottomNavigationBar: BottomNavigationBar(
+      //   backgroundColor: Colors.transparent,
+      //   fixedColor: Colors.transparent,
+      //   elevation: 0,
+      //   currentIndex: 2,
+      //   showSelectedLabels: false,
+      //   showUnselectedLabels: false,
+      //   items: const [
+      //     // BottomNavigationBarItem(
+      //     //   backgroundColor: Colors.transparent,
+      //     //   // icon: Icon(
+      //     //   //   Icons.home_outlined,
+      //     //   //   color: AppColors.appBlack,
+      //     //   // ),
+      //     //   icon: StylableIcon(
+      //     //     Icons.dns_outlined,
+      //     //     color: AppColors.appBlack,
+      //     //   ),
+      //     //   label: "",
+      //     // ),
+      //     BottomNavigationBarItem(
+      //       icon: Icon(
+      //         Icons.dns_outlined,
+      //         color: AppColors.appBlack,
+      //       ),
+      //       label: "",
+      //     ),
+      //     BottomNavigationBarItem(
+      //       icon: Icon(
+      //         Icons.dns_outlined,
+      //         color: AppColors.appBlack,
+      //       ),
+      //       label: "",
+      //     ),
+      //     BottomNavigationBarItem(
+      //       icon: Icon(
+      //         Icons.account_balance_wallet_outlined,
+      //         color: AppColors.appBlack,
+      //       ),
+      //       label: "",
+      //     ),
+      //     BottomNavigationBarItem(
+      //       icon: Icon(
+      //         Icons.cached_outlined,
+      //         color: AppColors.appBlack,
+      //       ),
+      //       label: "",
+      //     ),
+      //   ],
+      // ),
     );
   }
 }
